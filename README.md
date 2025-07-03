@@ -1,4 +1,38 @@
-# Learn Terraform - Provision an EKS Cluster
+# Provision an EKS Cluster
 
-This repo is a companion repo to the [Provision an EKS Cluster tutorial](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks), containing
-Terraform configuration files to provision an EKS cluster on AWS.
+This project is based into https://github.com/rodrigofrs13/artigo-aws-eks
+
+## Requirements
+
+- aws cli
+- terraform >= 1.3
+- helm
+
+## Steps
+
+```
+terraform init
+```
+
+```
+terraform plan 
+```
+
+```
+terraform apply 
+```
+
+```
+aws eks --region sa-east-1 update-kubeconfig --name cluster-eks-filipisaci
+```
+
+```
+kubectl cluster-info 
+```
+
+## Install ingress
+
+```
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm install ingress-nginx ingress-nginx/ingress-nginx   --namespace ingress-nginx --create-namespace   --set controller.publishService.enabled=true
+```

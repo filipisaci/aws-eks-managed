@@ -1,7 +1,7 @@
 ## Dados do cluster
-cluster_name = "cluster-eks-workshop"
+cluster_name = "cluster-eks-filipisaci"
 eks_version = "1.29"
-region = "us-east-1"
+region = "sa-east-1"
 cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]
 cluster_enabled_log_types = ["api", "audit", "authenticator","controllerManager","scheduler"]
 namespace = "monitoring"
